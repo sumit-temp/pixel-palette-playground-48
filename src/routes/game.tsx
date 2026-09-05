@@ -207,7 +207,7 @@ function GameScreen() {
         </div>
 
         {/* Table */}
-        <div className="absolute left-1/2 top-1/2 h-[74%] w-[62%] -translate-x-1/2 -translate-y-1/2">
+        <div className="absolute left-1/2 top-[46%] h-[64%] w-[58%] -translate-x-1/2 -translate-y-1/2">
           <div
             className="wood h-full w-full rounded-[50%] p-4"
             style={{ boxShadow: "var(--shadow-table)" }}
@@ -247,7 +247,7 @@ function GameScreen() {
             </div>
           </div>
 
-          <div className="absolute -bottom-16 left-1/2 flex -translate-x-1/2 flex-col-reverse items-center gap-1">
+          <div className="absolute -bottom-20 left-1/2 flex -translate-x-1/2 flex-col-reverse items-center gap-1">
             <p className="text-sm font-semibold">You</p>
             <Hearts lives={2} />
             <div className="mb-1">
@@ -356,7 +356,7 @@ function GameScreen() {
         </div>
 
         {/* Your hand */}
-        <div className="absolute bottom-0 left-1/2 flex -translate-x-1/2 items-end">
+        <div className="absolute bottom-5 left-1/2 flex -translate-x-1/2 items-end">
           {HAND.map((c, i) => {
             const offset = i - (HAND.length - 1) / 2;
             const playable = c.suit === "clubs" || c.suit === "hearts";
