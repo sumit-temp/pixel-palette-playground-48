@@ -207,7 +207,7 @@ function GameScreen() {
         </div>
 
         {/* Table */}
-        <div className="absolute left-1/2 top-[46%] h-[64%] w-[58%] -translate-x-1/2 -translate-y-1/2">
+        <div className="absolute left-1/2 top-[44%] h-[60%] w-[56%] -translate-x-1/2 -translate-y-1/2">
           <div
             className="wood h-full w-full rounded-[50%] p-4"
             style={{ boxShadow: "var(--shadow-table)" }}
@@ -247,10 +247,8 @@ function GameScreen() {
             </div>
           </div>
 
-          <div className="absolute -bottom-20 left-1/2 flex -translate-x-1/2 flex-col-reverse items-center gap-1">
-            <p className="text-sm font-semibold">You</p>
-            <Hearts lives={2} />
-            <div className="mb-1">
+          <div className="absolute -bottom-24 left-1/2 flex -translate-x-1/2 flex-col items-center gap-1">
+            <div className="-mb-8">
               <CardFan count={8} />
             </div>
             <div className="relative">
@@ -259,6 +257,8 @@ function GameScreen() {
                 <MicButton />
               </div>
             </div>
+            <p className="text-sm font-semibold">You</p>
+            <Hearts lives={2} />
           </div>
 
           <div className="absolute -left-14 top-1/2 flex -translate-y-1/2 items-center gap-2">
@@ -356,7 +356,7 @@ function GameScreen() {
         </div>
 
         {/* Your hand */}
-        <div className="absolute bottom-5 left-1/2 flex -translate-x-1/2 items-end">
+        <div className="absolute bottom-2 left-1/2 flex -translate-x-1/2 items-end">
           {HAND.map((c, i) => {
             const offset = i - (HAND.length - 1) / 2;
             const playable = c.suit === "clubs" || c.suit === "hearts";
@@ -365,10 +365,10 @@ function GameScreen() {
                 key={i}
                 className="-mx-2"
                 style={{
-                  transform: `rotate(${offset * 4}deg) translateY(${Math.abs(offset) * 7}px)`,
+                  transform: `rotate(${offset * 4}deg) translateY(${-Math.abs(offset) * 5}px)`,
                 }}
               >
-                <PlayingCard rank={c.rank} suit={c.suit} size="lg" highlighted={playable} />
+                <PlayingCard rank={c.rank} suit={c.suit} size="md" highlighted={playable} />
               </div>
             );
           })}
