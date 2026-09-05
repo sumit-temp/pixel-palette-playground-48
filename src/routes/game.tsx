@@ -356,7 +356,7 @@ function GameScreen() {
         </div>
 
         {/* Your hand */}
-        <div className="absolute bottom-2 left-1/2 flex -translate-x-1/2 items-end">
+        <div className="absolute bottom-6 left-1/2 flex -translate-x-1/2 items-end">
           {HAND.map((c, i) => {
             const offset = i - (HAND.length - 1) / 2;
             const playable = c.suit === "clubs" || c.suit === "hearts";
